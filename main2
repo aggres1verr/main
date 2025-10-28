@@ -1,0 +1,247 @@
+import math
+
+
+x = float(input("Введите значение x: "))
+y = 17*x**2-6*x+13
+print(f"При  x = {x} значение функции y = {y}")
+a = float(input("Введите значение a: "))
+y = 3*a**2+5*a-21
+print(f"При a = {a} значение функции y = {y}")
+a = float(input("Введите значение a: "))
+result = (a**2+10)/math.sqrt(a**2+1)
+print(f"Результат: {result}")
+a = float(input("Введите значение a: "))
+result = math.sqrt((2*a+math.sin(abs(3*a)))/3.56)
+print(f"Результат: {result}")
+x = float(input("Введите значение x: "))
+result = math.sin((3.2+math.sqrt(1+x))/abs(5*x))
+print(f"Результат: {result}")
+side = float(input("Введите длину стороны квадрата: "))
+perimeter = 4*side
+print(f"Периметр квадрата: {perimeter}")
+radius = float(input("Введите радиус окружности: "))
+diameter = 2*radius
+print(f"Диаметр окружности: {diameter}")
+R = 6350 
+height = float(input(" Введите высоту над землёй (км): "))
+distance = math.sqrt(2*R*height+height**2)
+print(f"Расстояние до лини горизонта {distance}(км)")
+edge = float(input("Введите длину стороны куба: ")) #край
+volume = edge**3 #объем
+lateral_area = 4*edge**2 #боковая поверхность
+print(f"Объем куба: {volume}")
+print(f"Площадь боковой поверхности: {lateral_area}")
+radius = float(input("Введите радиус окружности: "))
+circumference = 2*math.pi*radius #длина окружности
+area = math.pi*radius**2 # область
+print(f"Длина окружности: {circumference}")
+print(f"Площадь круга: {area}")
+x = float(input("Введите значение x: "))
+y = float(input("Введите значение y: "))
+z = 2*x**3-(3.44*x*y)+2.3*x**2-(7.1*y)+2
+print(f"Значение функции z: {z}")
+a = float(input("Введите значение a: "))
+b = float(input("Введите значение b: "))
+x = (3.14*(a+b)**3)+2.75*b**2-12.7*a-4.1
+print(f"Значение функции x: {x}")
+num1 = int(input("Введите первое число: "))
+num2 = int(input("Введите второе число: "))
+avg_arith = (num1+num2)/2 #среднее арифметическое
+avg_geom = math.sqrt(abs(num1*num2)) #среднее геометрическое
+print(f"Среднеее арифметическое: {avg_arith}")
+print(f"Среднее геометрическое: {avg_geom}")
+volume = float(input("Введите объем тела: "))
+mass = float(input("Введите массу тела: "))
+density = volume*mass #плотность материала
+print(f"Плотность материала: {density}")
+population = float(input("Введите количество жителей: "))
+area = float(input("Введите площадь территории: "))
+density = population/area #плотность населения
+print(f"Плотность населения: {density}")
+a = float(input("Введите значение a: "))
+b = float(input("Введите значение b: "))
+def solve_linear_equation(a):
+    if a == 0:
+        return "Ошибка: а не должно быть равно 0"
+x = -b/a
+c = solve_linear_equation(x)
+print(f"При a={a}, b={b}, решение x = {x}")
+a = float(input("Введите значение катета a: "))
+b = float(input("Введите значение катета b: "))
+hypotenuse = math.sqrt(a**2+b**2)
+print(f"Гипотенуза прямоугольного треугольника {hypotenuse}")
+R_outer = float(input("Введите значение внешнего радиуса: "))
+R_inner = float(input("Введите значение внутреннего радиуса: "))
+area = math.pi*(R_outer**2-R_inner**2)
+print(f"Площадь кольца составляет {area}")
+a = float(input("Введите значение первого катета: "))
+b = float(input("Введите значение второго катета: "))
+perimeter = 2*(a+b)
+print(f"Периметр прямоугольного треугольника составляет {perimeter}")
+a = float(input("Введите значение первого основания: "))
+b = float(input("Введите значение второго основания:"))
+height = float(input("Введите высоту трапеции: "))
+side = math.sqrt(((b-a)/2)**2+height**2)
+print(f"Периметр равнобедренной трапеции состовляет {side}")
+x = float(input("Введите значение x: "))
+y = float(input("Введите значение y: "))
+z = (x+2+y)/(x**2)
+q = (7.25*math.sin(x)-abs(y))
+print(f"Значение переменной z {z}")
+print(f"Значение переменной q {q}")
+a = float(input("Введите значение a: "))
+b = float(input("Введите значение b: "))
+x = (2/(a**2+25)+b)/math.sqrt(b)+((a+b)/2)
+y = abs(a)+2*math.sin(b)/5.5*a
+print(f"Значение переменной x {x}")
+print(f"Значение переменной y {y}")
+e = float(input("Введите значение e: "))
+f = float(input("Введите значение f: "))
+g = float(input("Введите значение g: "))
+h = float(input("Введите значение h: "))
+a = math.sqrt(abs(e-3/f))**3+g
+b = math.sin(e)+math.cos(h)**2    
+c = (33*g)/e*f-3
+print(f"Значение переменной a {a}")
+print(f"Значение переменной b {b}")
+print(f"Значение переменной c {c}")
+e = float(input("Введите значение e: "))
+f = float(input("Введите значение f: "))
+g = float(input("Введите значение g: "))
+h = float(input("Введите значение h: "))
+a = (e+f/2)/3
+b = abs(h**2-g)
+c = math.sqrt(g-h)**2-3*math.sin(e)
+print(f"Значение переменной a {a}")
+print(f"Значение переменной b {b}")
+print(f"Значение переменной c {c}")
+num1 = float(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+avg_arith = abs((num1+num2)/2)
+avg_geom = abs((num1*num2)**0.5)
+print(f"Среднее арифметическое модулей {avg_arith}")
+print(f"Среднее геометрическое модулей {avg_geom}")
+a = float(input("Введите длину стороны a: "))
+b = float(input("Введите длину стороны b: "))
+perimeter = 2*(a+b)
+diagonal = math.sqrt(a**2+b**2)
+print(f"Периметр прямоугольника {perimeter}")
+print(f"Длина диагонали {diagonal}")
+x = float(input("Введите значение x: "))
+y = float(input("Введите значение y: "))
+sum_xy = x+y
+diff_xy = x-y
+prod_xy = x*y
+if y!=0:
+    div_xy=x/y
+else:
+    div_xy = "Деление на ноль невозможно"
+print(f"Сумма: {sum_xy}")
+print(f"Разность: {diff_xy}")
+print(f"Произведение: {prod_xy}")
+print(f"Частное: {div_xy}")
+length = float(input("Введите длину: "))
+width = float(input("Введите ширину: "))
+height = float(input("Введите высоту: "))
+volume = length*width*height
+lateral_surface_area = 2*height*(length+width) #боковая поверхность
+print(f"Объем параллелепипида {volume}")
+print(f"Площадь боковой поверхности {lateral_surface_area}")
+x1 = float(input("Введите x1: "))
+y1 = float(input("Введите y1: "))
+x2 = float(input("Введите x2: "))
+y2 = float(input("Введите y2: "))
+distance = math.sqrt((x2-x1)**2+(y2-y1)**2)
+print(f"Расстояние между точками {distance}")
+a = float(input("Введите длину первого основания: "))
+b = float(input("Введите длину второго основания: "))
+height = float(input("Введите высоту: "))
+perimeter = height*(a+b)/2
+print(f"Периметр равнобедренной трапеции состовляет {perimeter}")
+a = float(input("Введите длину первого основания: "))
+b = float(input("Введите длину второго основания: "))
+engle = float(input("Введите угол при большем основании: "))
+area = ((a**2+b**2)/4)*math.tan(engle)
+print(f"Площадь равнобедренной трапеции состовляет {area}")
+x1 = float(input("Введите координату x1: "))
+y1 = float(input("Введите координату y1: "))
+x2 = float(input("Введите координату x2: "))
+y2 = float(input("Введите координату y2: "))
+x3 = float(input("Введите координату x3: "))
+y3 = float(input("Введите координату y3: "))
+AB = math.sqrt((x2-x1)**2+(y2-y1)**2)
+BC = math.sqrt((x3-x2)**2+(y3-y2)**2)
+AC = math.sqrt((x3-x1)**2+(y3-y1)**2)
+perimeter = AB+BC+AC
+p = perimeter/2
+area = math.sqrt(p*(p-AB)*(p-BC)*(p-AC))
+print(f"Периметр треугольника состовляет {perimeter}")
+print(f"площадь треугольника состовляет {area}")
+x1 = float(input("Введите координату x1: "))
+y1 = float(input("Введите координату y1: "))
+x2 = float(input("Введите координату x2: "))
+y2 = float(input("Введите координату y2: "))
+x3 = float(input("Введите координату x3: "))
+y3 = float(input("Введите координату y3: "))
+x4 = float(input("Введите координату x4: "))
+y4 = float(input("Введите координату y4: "))
+area = abs((x1-x2)*(y1+y2)+(x2-x3)*(y2+y3)+(x3-x4)*(y3+y4)+(x4-x1)*(y4+y1))/2
+print(f"Площадь выпуклого четырехугольника составляет {area}")
+price_candy = float(input("Введите стоимость 1кг конфет: "))
+price_cookies = float(input("Введите стоимость 1кг печенья: "))
+price_apples = float(input("Введите стоимость 1кг яблок: "))
+def price(x, y, z):
+    return price_candy*x*+price_cookies*y+price_apples*z
+print(price(500, 400, 300))
+price_monitor = float(input("Введите цену монитора: "))
+price_system = float(input("Введите цену системного блока: "))
+price_keyboard = float(input("Введите цену клавиатуры: "))
+price_mouse = float(input("Введите цену мыши: "))
+N = 3
+one_pc = price_monitor+price_keyboard+price_mouse+price_system
+tree_pc = N*one_pc
+print(f"Стоимость трех компьютеров составляет {tree_pc}")
+x = float(input("Введите возраст Тани: "))
+y = float(input("Введите возраст Мити: "))
+avg = (x+y)/2
+diff_tanya = abs(x-avg)
+diff_mitya = abs(y-avg)
+print(f"Средний возраст Тани и Мити {avg}")
+print(f"Возраст Тани отличается от среднего значения на {diff_tanya}")
+print(f"Возраст Мити отличается от среднего значения на {diff_mitya}")
+v1 = float(input("Введите скорость первого автомобиля: "))
+v2 = float(input("Введите скорость второго автомобиля: "))
+S = float(input("Введите расстояние между машинами: "))
+t = S/(v1+v2)
+print(f"Автомобили встретятся через {t}")
+v1 = int(input("Введите скорость первого автомобиля: "))
+v2 = int(input("Введите скорость второго автомобиля: "))
+t = 0.5
+distance_travelled = (v1-v2)*t
+def temp(a):
+    if v1>v2:
+        return distance_travelled
+    else:
+        v1<v2
+    return "Ошибка: по условию скорость первого автомобиля превышает скорость второго автомобиля"
+print(f"Расстояние между автомобили после 30 минут езды составит {distance_travelled}")
+temperature = float(input("Введите температуру по шкале Цельсия: "))
+temp_fahrenheit = temperature*1.8+32
+temp_kelvin = temperature+273.15
+print(f"Значение температуры по шкале Фаренгейта {temp_fahrenheit}")
+print(f"Значение температуры по шкале Кельвина {temp_kelvin}")
+fahrenheit = float(input("Введите температуру в градусах по Фаренгейту: "))
+celsius = (fahrenheit-32)*5/9
+print(f"Температура по Цельсию {celsius:.2f}")
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+sum = a+b
+raz = a-b
+umn = a*b
+chast = a/b
+if b!=0:
+    chast = a/b
+else:
+    chast = "Деление на 0 невозможно"
+avg_arith = (a+b)/2
+print(f"{a:.0f}+{b:.0f}={sum:.0f} {a:.0f}-{b:.0f}={raz:.0f} {a:.0f}*{b:.0f}={umn:.0f} {a:.0f}/{b:.0f}={chast} ({a:.0f}+{b:.0f})/2 = {avg_arith:.1f}")
