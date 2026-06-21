@@ -1,0 +1,876 @@
+import math
+import random
+
+
+
+# 7.1
+numbers = [float(input(f"Введите a{i+1}: ")) for i in range(10)]
+total = sum(numbers)
+print(f"Сумма: {total}")
+
+# 7.2
+n = int(input("Введите натуральное число n: "))
+numbers = [float(input(f"Введите a{i+1}: ")) for i in range(n)]
+total = sum(numbers)
+print(f"Сумма: {total}")
+
+# 7.3
+sides = [float(input(f"Введите длину стороны {i+1}: ")) for i in range(12)]
+perimeter = sum(sides)
+print(f"Периметр: {perimeter}")
+
+# 7.4
+n = int(input("Количество предметов: "))
+masses = [float(input(f"Масса предмета {i+1}: ")) for i in range(n)]
+total_mass = sum(masses)
+print(f"Общая масса: {total_mass}")
+
+# 7.5
+n = int(input("Количество сотрудников: "))
+salaries = [float(input(f"Зарплата сотрудника {i+1}: ")) for i in range(n)]
+total_salary = sum(salaries)
+print(f"Общая сумма зарплат: {total_salary}")
+
+# 7.6
+n = int(input("Количество элементов: "))
+resistances = [float(input(f"Сопротивление элемента {i+1} (Ом): ")) for i in range(n)]
+total_resistance = sum(resistances)
+print(f"Общее сопротивление: {total_resistance} Ом")
+
+# 7.7
+numbers = []
+while True:
+    num = int(input("Введите число (0 для окончания): "))
+    if num == 0:
+        break
+    numbers.append(num)
+
+print(f"а) Сумма всех чисел: {sum(numbers)}")
+print(f"б) Количество чисел: {len(numbers)}")
+
+# 7.8
+numbers = []
+while True:
+    num = int(input("Введите число (0 для окончания): "))
+    if num == 0:
+        break
+    numbers.append(num)
+
+print(f"а) Сумма всех чисел: {sum(numbers)}")
+print(f"б) Количество чисел: {len(numbers)}")
+
+# 7.9
+n = int(input("Количество учеников: "))
+total_sum = 0
+for i in range(n):
+    grades = [int(input(f"Оценка ученика {i+1} по предмету {j+1}: ")) for j in range(4)]
+    student_sum = sum(grades)
+    total_sum += student_sum
+    print(f"  Сумма оценок ученика {i+1}: {student_sum}")
+
+print(f"\nОбщая сумма всех оценок: {total_sum}")
+
+# 7.10
+n = int(input("Количество спортсменов: "))
+for i in range(n):
+    scores = [float(input(f"Балл спортсмена {i+1} от судьи {j+1}: ")) for j in range(5)]
+    total_score = sum(scores)
+    print(f"  Сумма баллов спортсмена {i+1}: {total_score}")
+
+
+
+
+
+
+
+
+# 8.1
+n = int(input("Введите n: "))
+max_k = int(math.isqrt(n))  # math.isqrt — целый квадратный корень
+print(*[k*k for k in range(1, max_k + 1)])
+
+# 8.2
+n = int(input("Введите n: "))
+k = int(math.isqrt(n)) + 1
+print(f"Без цикла: {k*k}")
+
+# 8.3
+a = float(input("Введите a (0 < a ≤ 1): "))
+max_n = int(1/a)  # целая часть от 1/a
+print("Аналитически:", [f"1/{i}" for i in range(1, max_n + 1)])
+
+# 8.4
+a = float(input("Введите a (0 < a ≤ 1): "))   #цикл
+n = 1
+while 1/n >= a:
+    n += 1
+print(f"Первое < a: 1/{n} = {1/n}")
+
+# 8.5
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+n = 2
+while 1 + 1/n >= a:
+    print(f"1 + 1/{n} = {1 + 1/n:.4f}")
+    n += 1
+print()
+# 8.6
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+n = 2
+while True:
+    val = 1 + 1/n
+    if val < a:
+        break
+    print(f"{val:.4f}", end=' ')
+    n += 1
+print()
+
+# 8.7
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+n = 2
+while 1 + 1/n >= a:
+    n += 1
+print(f"Первое < a: 1 + 1/{n} = {1 + 1/n:.4f}")
+
+# 8.8
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+max_n = int(1/(a - 1))
+print(f"Все значения n от 2 до {max_n}:")
+for n in range(2, max_n + 1):
+    print(f"n = {n}: последовательность от 1.5 до {1 + 1/n:.4f} — все >= {a}")
+
+# Проверка: при n = max_n + 1 уже нарушается
+print(f"\nПри n = {max_n + 1}: 1 + 1/{max_n + 1} = {1 + 1/(max_n + 1):.4f} < {a}")
+
+# 8.9
+a = float(input("Введите a (1 < a ≤ 1.5): "))
+
+n = 2
+while 1 + 1/n >= a:
+    n += 1
+print(f"С циклом while: n = {n} (последнее число = {1 + 1/n:.6f})")
+
+# 8.10
+a = float(input("Введите a: "))
+
+print("=" * 50)
+print("ВАРИАНТ А: последовательность 1 + 1/n, n = 1, 2, 3, ...")
+print("=" * 50)
+
+n = 1
+print("С циклом while:", end=' ')
+while 1 + 1/n < a:
+    print(f"{1 + 1/n:.4f}", end='  ')
+    n += 1
+print()
+
+
+
+
+
+
+
+
+
+
+
+
+# 9.1 
+print("=" * 60)
+print("а) 5 строк по 4 восьмёрки")
+print("=" * 60)
+for i in range(5):
+    for j in range(4):
+        print("8", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("б) 7 строк, число i повторяется 5 раз")
+print("=" * 60)
+for i in range(1, 8):
+    for j in range(5):
+        print(i, end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("в) 8 строк по 4 числа: 10, 20, ..., 80")
+print("=" * 60)
+for i in range(1, 9):
+    num = i * 10
+    for j in range(4):
+        print(f"{num:2d}", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("г) 8 строк по 4 числа: 12, 22, ..., 82")
+print("=" * 60)
+for i in range(8):
+    num = 12 + i * 10
+    for j in range(4):
+        print(f"{num:2d}", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("д) 5 строк: 2, 3, ..., 20 (шаг по строкам)")
+print("=" * 60)
+for i in range(5):
+    for j in range(2, 21):
+        print(f"{j:2d}", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("е) 4 строки: 15, 14, ..., 3 (убывание)")
+print("=" * 60)
+for i in range(4):
+    for j in range(15, 2, -1):
+        print(f"{j:2d}", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("ж) Треугольник из нулей: 7, 6, 5, 4, 3, 2, 1")
+print("=" * 60)
+for i in range(7, 0, -1):
+    for j in range(i):
+        print("0", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("з) Треугольник чисел: 8 убывает, 1-5 увеличиваются")
+print("=" * 60)
+for i in range(8):
+    # Левая часть: 8, 7, ..., 1
+    for j in range(8 - i):
+        print(f"{8 - j}", end=" ")
+    # Правая часть: 5, 4, 3, 2, 1 (фиксировано для верхних строк)
+    # или анализируем по картинке: строка i имеет числа от 8-i до ... 
+    # Первая строка: 8 7 6 5 4 3 2 1
+    # Вторая: 8 7 6 5 4 3 2
+    # и т.д.
+    print()
+
+# Уточнённый вариант з)
+print("\n--- Уточнение для з) ---")
+for i in range(8):
+    for j in range(8 - i):
+        print(f"{8 - j}", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("и) Таблица сложения: строка i начинается с i+2")
+print("=" * 60)
+for i in range(9):  # строки 0-8 → числа 2-10
+    start = i + 2
+    for j in range(9 - i):  # уменьшается количество элементов
+        print(f"{start + j:2d}", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("й) Треугольник: строка i содержит числа от 2 до i+2")
+print("=" * 60)
+for i in range(9):  # 9 строк
+    for j in range(i + 1):
+        print(f"{j + 2:2d}", end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("к) Лесенка: строка i, число i+3 повторяется i+3 раза")
+print("=" * 60)
+for i in range(4):
+    num = i + 3
+    count = i + 3
+    for j in range(count):
+        print(num, end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("л) Пирамида: 21(1), 22(2), 23(3), 24(4), 25(5)")
+print("=" * 60)
+for i in range(5):
+    num = 21 + i
+    count = i + 1
+    for j in range(count):
+        print(num, end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("м) Лесенка убывающая: 1(8), 2(7), 3(6), 4(5), 5(4)")
+print("=" * 60)
+for i in range(1, 6):
+    for j in range(9 - i):
+        print(i, end=" ")
+    print()
+
+print("\n" + "=" * 60)
+print("н) Лесенка: 10(1), 20(2), 30(3), 40(4), 50(5)")
+print("=" * 60)
+for i in range(1, 6):
+    num = i * 10
+    for j in range(i):
+        print(num, end=" ")
+    print()
+
+9.2
+print("=" * 60)
+print("9.2 а) Таблица сложения (столбцы — первое слагаемое)")
+print("=" * 60)
+for j in range(1, 10):      # строки (второе слагаемое)
+    for i in range(1, 10):  # столбцы (первое слагаемое)
+        print(f"{i}+{j}={i+j:2d}", end="  ")
+    print()
+
+print("\n" + "=" * 60)
+print("9.2 б) Таблица сложения (строки — первое слагаемое)")
+print("=" * 60)
+for i in range(1, 10):      # строки (первое слагаемое)
+    for j in range(1, 10):  # столбцы (второе слагаемое)
+        print(f"{i}+{j}={i+j:2d}", end="  ")
+    print()
+
+# 9.3
+print("\n" + "=" * 60)
+print("9.3 а) Таблица умножения (столбцы — первый множитель)")
+print("=" * 60)
+for j in range(1, 10):      # строки (второй множитель)
+    for i in range(1, 10):  # столбцы (первый множитель)
+        print(f"{i}*{j}={i*j:2d}", end="  ")
+    print()
+
+print("\n" + "=" * 60)
+print("9.3 б) Таблица умножения (строки — первый множитель)")
+print("=" * 60)
+for i in range(1, 10):      # строки (первый множитель)
+    for j in range(1, 10):  # столбцы (второй множитель)
+        print(f"{i}*{j}={i*j:2d}", end="  ")
+    print()
+
+# 9.4
+print("\n" + "=" * 60)
+print("9.4 Вариант 1: Ввод оценок по строкам")
+print("=" * 60)
+
+STUDENTS = 12
+SUBJECTS = 3
+
+grades = []
+print(f"Введите оценки {STUDENTS} учеников по {SUBJECTS} предметам:")
+for i in range(STUDENTS):
+    while True:
+        try:
+            row = input(f"Ученик {i+1} (3 оценки через пробел): ").split()
+            if len(row) != SUBJECTS:
+                print(f"Нужно ввести ровно {SUBJECTS} оценки!")
+                continue
+            row = [int(x) for x in row]
+            grades.append(row)
+            break
+        except ValueError:
+            print("Введите числа!")
+
+# Вывод таблицы и подсчёт сумм
+print("\n" + "-" * 40)
+print(f"{'Ученик':<8} | {'Предмет 1':<9} | {'Предмет 2':<9} | {'Предмет 3':<9} | {'Сумма':<5}")
+print("-" * 55)
+
+for i in range(STUDENTS):
+    total = sum(grades[i])
+    print(f"{i+1:<8} | {grades[i][0]:<9} | {grades[i][1]:<9} | {grades[i][2]:<9} | {total:<5}")
+
+# Итоговая сумма всех оценок
+grand_total = sum(sum(row) for row in grades)
+print("-" * 55)
+print(f"{'ИТОГО':<8} | {'':<9} | {'':<9} | {'':<9} | {grand_total:<5}")
+
+# 9.5
+print("=" * 60)
+print("9.5. Лучшая группа по среднему баллу")
+print("=" * 60)
+
+GROUPS = 3
+STUDENTS = 20
+EXAMS = 3
+
+groups = []
+for g in range(GROUPS):
+    print(f"\n--- Группа {g + 1} ---")
+    group_marks = []
+    for s in range(STUDENTS):
+        while True:
+            try:
+                marks = input(f"Студент {s + 1} (3 оценки): ").split()
+                marks = [int(m) for m in marks]
+                group_marks.append(marks)
+                break
+            except ValueError:
+                print("Введите 3 целых числа!")
+    groups.append(group_marks)
+
+# Подсчёт средних баллов
+print("\n" + "=" * 60)
+print("РЕЗУЛЬТАТЫ")
+print("=" * 60)
+
+best_avg = -1
+best_group = -1
+
+for g in range(GROUPS):
+    total = sum(sum(student) for student in groups[g])
+    avg = total / (STUDENTS * EXAMS)
+    print(f"Группа {g + 1}: средний балл = {avg:.2f}")
+    if avg > best_avg:
+        best_avg = avg
+        best_group = g + 1
+
+print(f"\n>>> ЛУЧШАЯ ГРУППА: {best_group} (средний балл {best_avg:.2f})")
+
+# 9.6
+print("\n" + "=" * 60)
+print("9.6. Количество делителей чисел от 120 до 140")
+print("=" * 60)
+
+def count_divisors(n):
+    """Подсчёт количества делителей числа n"""
+    count = 0
+    i = 1
+    while i * i <= n:
+        if n % i == 0:
+            count += 1
+            if i != n // i:  # избегаем двойного счёта для квадратов
+                count += 1
+        i += 1
+    return count
+
+print(f"{'Число':<8} | {'Делители':<30} | {'Кол-во'}")
+print("-" * 55)
+
+for num in range(120, 141):
+    divisors = []
+    for d in range(1, num + 1):
+        if num % d == 0:
+            divisors.append(d)
+    cnt = len(divisors)
+    div_str = ", ".join(map(str, divisors[:8]))
+    if len(divisors) > 8:
+        div_str += "..."
+    print(f"{num:<8} | {div_str:<30} | {cnt}")
+
+print("\n--- Краткая сводка ---")
+for num in range(120, 141):
+    print(f"{num}: {count_divisors(num)} делителей")
+
+# 9.7
+print("\n" + "=" * 60)
+print("9.7. Графическое изображение делимости")
+print("=" * 60)
+
+n = int(input("Введите n: "))
+
+print("\nРезультат:")
+for num in range(1, n + 1):
+    # Подсчёт делителей
+    divisors = 0
+    for d in range(1, num + 1):
+        if num % d == 0:
+            divisors += 1
+    print(f"{num}{ '+' * divisors }")
+
+# === Проверка для n = 4 (из условия) ===
+print("\n--- Проверка для n = 4 ---")
+n_test = 4
+for num in range(1, n_test + 1):
+    divisors = sum(1 for d in range(1, num + 1) if num % d == 0)
+    print(f"{num}{ '+' * divisors }")
+
+# 9.8
+print("\n" + "=" * 60)
+print("9.8. Числа от 1 до 300 с ровно 5 делителями")
+print("=" * 60)
+
+def count_divisors(n):
+    count = 0
+    i = 1
+    while i * i <= n:
+        if n % i == 0:
+            count += 1
+            if i != n // i:
+                count += 1
+        i += 1
+    return count
+
+result = []
+for num in range(1, 301):
+    if count_divisors(num) == 5:
+        result.append(num)
+
+print(f"Найдено {len(result)} чисел с ровно 5 делителями:")
+print(result)
+
+# Проверка: числа вида p^4 (p — простое) имеют ровно 5 делителей: 1, p, p², p³, p⁴
+print("\n--- Проверка: числа вида p⁴ ---")
+primes = [2, 3, 5, 7]
+for p in primes:
+    p4 = p ** 4
+    if p4 <= 300:
+        print(f"{p}⁴ = {p4}, делители: 1, {p}, {p**2}, {p**3}, {p4}")
+
+# 9.9
+print("\n" + "=" * 60)
+print("9.9. Числа от 200 до 500 с ровно 6 делителями")
+print("=" * 60)
+
+def count_divisors(n):
+    count = 0
+    i = 1
+    while i * i <= n:
+        if n % i == 0:
+            count += 1
+            if i != n // i:
+                count += 1
+        i += 1
+    return count
+
+result = []
+for num in range(200, 501):
+    if count_divisors(num) == 6:
+        result.append(num)
+
+print(f"Найдено {len(result)} чисел с ровно 6 делителями:")
+print(result)
+
+# Проверка нескольких чисел
+print("\n--- Делители первых 5 чисел ---")
+for num in result[:5]:
+    divs = [d for d in range(1, num + 1) if num % d == 0]
+    print(f"{num}: {divs}")
+
+# 9.10
+print("\n" + "=" * 60)
+print("9.10. Числа от a до b с ровно k делителями")
+print("=" * 60)
+
+def count_divisors(n):
+    count = 0
+    i = 1
+    while i * i <= n:
+        if n % i == 0:
+            count += 1
+            if i != n // i:
+                count += 1
+        i += 1
+    return count
+
+a = int(input("Введите a: "))
+b = int(input("Введите b: "))
+k = int(input("Введите k (количество делителей): "))
+
+result = []
+for num in range(a, b + 1):
+    if count_divisors(num) == k:
+        result.append(num)
+
+print(f"\nЧисла от {a} до {b} с ровно {k} делителями:")
+print(f"Найдено: {len(result)} чисел")
+if result:
+    print(result)
+else:
+    print("Таких чисел нет.")
+
+# === Демонстрация ===
+print("\n" + "=" * 60)
+print("ДЕМОНСТРАЦИЯ: a=1, b=100, k=4")
+print("=" * 60)
+demo_result = [num for num in range(1, 101) if count_divisors(num) == 4]
+print(f"Числа с ровно 4 делителями: {demo_result}")
+print("\n(Это либо p³, либо p*q, где p и q — различные простые)")
+
+
+
+
+
+
+
+
+# 10.1
+import random
+
+print("=" * 60)
+print("10.1. Случайные вещественные числа")
+print("=" * 60)
+
+# а) 8 случайных вещественных чисел [0, 1)
+print("\nа) 8 чисел в диапазоне [0, 1):")
+for _ in range(8):
+    print(f"{random.random():.4f}", end="  ")
+print()
+
+# б) k случайных вещественных чисел [0, 1)
+k = int(input("\nб) Введите k: "))
+print(f"{k} чисел в диапазоне [0, 1):")
+for _ in range(k):
+    print(f"{random.random():.4f}", end="  ")
+print()
+
+# в) 15 случайных вещественных чисел [25, 26)
+print("\nв) 15 чисел в диапазоне [25, 26):")
+for _ in range(15):
+    print(f"{25 + random.random():.4f}", end="  ")
+print()
+
+# г) 20 случайных вещественных чисел [0, 15)
+print("\nг) 20 чисел в диапазоне [0, 15):")
+for _ in range(20):
+    print(f"{random.random() * 15:.4f}", end="  ")
+print()
+
+# д) Случайное натуральное k и k случайных вещественных [a, b)
+k = random.randint(1, 20)  # случайное натуральное число
+a = float(input("\nд) Введите a: "))
+b = float(input("д) Введите b: "))
+print(f"Случайное k = {k}")
+print(f"{k} чисел в диапазоне [{a}, {b}):")
+for _ in range(k):
+    print(f"{a + random.random() * (b - a):.4f}", end="  ")
+print()
+
+# е) 10 случайных вещественных чисел [-40, 40)
+print("\nе) 10 чисел в диапазоне [-40, 40):")
+for _ in range(10):
+    print(f"{random.uniform(-40, 40):.4f}", end="  ")
+print()
+
+# ж) Случайное натуральное k ≤ m и k случайных вещественных [a, b)
+m = int(input("\nж) Введите m (макс. значение k): "))
+a = float(input("ж) Введите a: "))
+b = float(input("ж) Введите b: "))
+k = random.randint(1, m)
+print(f"Случайное k = {k} (не превосходит {m})")
+print(f"{k} чисел в диапазоне [{a}, {b}):")
+for _ in range(k):
+    print(f"{random.uniform(a, b):.4f}", end="  ")
+print()
+
+
+print("\n" + "=" * 60)
+print("10.2. Случайные целые числа")
+print("=" * 60)
+
+# а) 10 случайных целых [0, 10]
+print("\nа) 10 целых чисел от 0 до 10 включительно:")
+for _ in range(10):
+    print(random.randint(0, 10), end="  ")
+print()
+
+# б) k случайных целых [0, a]
+k = int(input("\nб) Введите k: "))
+a = int(input("б) Введите a: "))
+print(f"{k} целых чисел от 0 до {a}:")
+for _ in range(k):
+    print(random.randint(0, a), end="  ")
+print()
+
+# в) 20 случайных целых [10, 20]
+print("\nв) 20 целых чисел от 10 до 20 включительно:")
+for _ in range(20):
+    print(random.randint(10, 20), end="  ")
+print()
+
+# г) k случайных целых [-10, a]
+k = int(input("\nг) Введите k: "))
+a = int(input("г) Введите a: "))
+print(f"{k} целых чисел от -10 до {a}:")
+for _ in range(k):
+    print(random.randint(-10, a), end="  ")
+print()
+
+# д) Случайное натуральное k ≤ 15 и k случайных целых [a, b]
+k = random.randint(1, 15)
+a = int(input("\nд) Введите a: "))
+b = int(input("д) Введите b: "))
+print(f"Случайное k = {k} (≤ 15)")
+print(f"{k} целых чисел от {a} до {b}:")
+for _ in range(k):
+    print(random.randint(a, b), end="  ")
+print()
+
+
+print("\n" + "=" * 60)
+print("10.3. Случайные натуральные, целые и вещественные числа")
+print("=" * 60)
+
+m = random.randint(1, 20)   # случайное натуральное ≤ 20
+n = random.randint(1, 20)   # случайное натуральное ≤ 20
+a = int(input("Введите a: "))
+b = int(input("Введите b: "))
+
+print(f"\nСлучайное m = {m} (натуральное, ≤ 20)")
+print(f"Случайное n = {n} (натуральное, ≤ 20)")
+
+print(f"\n{n} целых чисел от {a} до {b} включительно:")
+integers = [random.randint(a, b) for _ in range(n)]
+print(integers)
+
+print(f"\n{m} неотрицательных вещественных чисел, не превосходящих {n}:")
+reals = [random.random() * n for _ in range(m)]
+print([f"{x:.4f}" for x in reals])
+
+
+print("\n" + "=" * 60)
+print("10.4. Только единицы и нули (диапазон [0, 3])")
+print("=" * 60)
+
+print("50 целых чисел от 0 до 3, выводим только 0 и 1:")
+count = 0
+while count < 50:
+    num = random.randint(0, 3)
+    if num in (0, 1):
+        print(num, end=" ")
+        count += 1
+        if count % 10 == 0:
+            print()
+print()
+
+# Альтернативный вариант: сразу генерируем 0 или 1
+print("\nАльтернатива (сразу 0 или 1):")
+for _ in range(50):
+    print(random.randint(0, 1), end=" ")
+    if (_ + 1) % 10 == 0:
+        print()
+
+
+print("\n" + "=" * 60)
+print("10.5. Только нечётные числа (диапазон [0, 5])")
+print("=" * 60)
+
+print("50 целых чисел от 0 до 5, выводим только нечётные:")
+count = 0
+while count < 50:
+    num = random.randint(0, 5)
+    if num % 2 == 1:  # нечётное
+        print(num, end=" ")
+        count += 1
+        if count % 10 == 0:
+            print()
+print()
+
+# Альтернатива: случайный выбор из {1, 3, 5}
+print("\nАльтернатива (только 1, 3, 5):")
+for _ in range(50):
+    print(random.choice([1, 3, 5]), end=" ")
+    if (_ + 1) % 10 == 0:
+        print()
+
+
+print("\n" + "=" * 60)
+print("10.6. Подсчёт единиц и нулей (диапазон [0, 1])")
+print("=" * 60)
+
+ones = 0
+zeros = 0
+print("50 случайных чисел 0 или 1:")
+for _ in range(50):
+    num = random.randint(0, 1)
+    print(num, end=" ")
+    if num == 1:
+        ones += 1
+    else:
+        zeros += 1
+    if (_ + 1) % 10 == 0:
+        print()
+
+print(f"\nКоличество единиц: {ones}")
+print(f"Количество нулей: {zeros}")
+print(f"Всего: {ones + zeros}")
+
+import random
+
+print("=" * 60)
+print("10.7. Случайные числа по условию")
+print("=" * 60)
+
+# а) Два разных целых: a ∈ [0, 2), b ∈ [0, 3)
+print("\nа) Два разных числа: a ∈ [0, 1, 2], b ∈ [0, 1, 2], a ≠ b")
+# Вариант 1: генерируем пока не получим разные
+a = random.randint(0, 2)
+b = random.randint(0, 2)
+while a == b:
+    b = random.randint(0, 2)
+print(f"a = {a}, b = {b}")
+
+# Вариант 2: случайный выбор двух разных из множества
+pair = random.sample([0, 1, 2], 2)
+print(f"random.sample: a = {pair[0]}, b = {pair[1]}")
+
+# б) Три разных целых: a ∈ [1, 3], b ∈ [1, 5], c ∈ [1, 4)
+print("\nб) Три разных числа: a ∈ [1,2,3], b ∈ [1..5], c ∈ [1,2,3]")
+# Генерируем a и c из [1,2,3], b из [1..5], все разные
+while True:
+    a = random.randint(1, 3)
+    b = random.randint(1, 5)
+    c = random.randint(1, 3)
+    if a != b and b != c and a != c:
+        break
+print(f"a = {a}, b = {b}, c = {c}")
+
+# в) 15 чисел, среди которых 7 двоек и 8 троек
+print("\nв) 15 чисел: 7 двоек и 8 троек")
+numbers = [2] * 7 + [3] * 8
+random.shuffle(numbers)
+print(numbers)
+print(f"Двоек: {numbers.count(2)}, троек: {numbers.count(3)}")
+
+
+print("\n" + "=" * 60)
+print("10.8. Моделирование подбрасывания монеты")
+print("=" * 60)
+
+# 0 — решка (лицевая), 1 — орел (обратная)
+tosses = int(input("Сколько раз подбросить монету? "))
+
+heads = 0  # решка (0)
+tails = 0  # орел (1)
+
+print("Результаты (0 — решка, 1 — орел):")
+for i in range(tosses):
+    result = random.randint(0, 1)
+    print(result, end=" ")
+    if (i + 1) % 10 == 0:
+        print()
+    if result == 0:
+        heads += 1
+    else:
+        tails += 1
+
+print(f"\nРешка (0): {heads} раз")
+print(f"Орел (1): {tails} раз")
+
+
+print("\n" + "=" * 60)
+print("10.9. Относительная частота 0 и 1 при бросках монеты")
+print("=" * 60)
+
+def simulate_coin(n):
+    """Подбросить монету n раз, вернуть частоты 0 и 1"""
+    count_0 = 0
+    count_1 = 0
+    for _ in range(n):
+        if random.randint(0, 1) == 0:
+            count_0 += 1
+        else:
+            count_1 += 1
+    return count_0, count_1
+
+# При 100 бросках
+count_0_100, count_1_100 = simulate_coin(100)
+print(f"При 100 бросках:")
+print(f"  0 (решка): {count_0_100} раз, частота = {count_0_100/100:.4f}")
+print(f"  1 (орел):  {count_1_100} раз, частота = {count_1_100/100:.4f}")
+
+# При 1000 бросках
+count_0_1000, count_1_1000 = simulate_coin(1000)
+print(f"\nПри 1000 бросках:")
+print(f"  0 (решка): {count_0_1000} раз, частота = {count_0_1000/1000:.4f}")
+print(f"  1 (орел):  {count_1_1000} раз, частота = {count_1_1000/1000:.4f}")
+
+# Несколько экспериментов для наглядности
+print("\n--- Серия экспериментов ---")
+for n in [100, 1000, 10000, 100000]:
+    c0, c1 = simulate_coin(n)
+    print(f"n = {n:>6}:  0 → {c0/n:.4f},  1 → {c1/n:.4f}  (отклонение от 0.5: {abs(c0/n - 0.5):.4f})")
